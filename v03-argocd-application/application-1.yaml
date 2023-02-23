@@ -4,14 +4,10 @@ metadata:
   name: application-from-scratch
 spec:
   destination:
-    namespace: default
+    namespace: argocd
     server: https://kubernetes.default.svc
   project: default
   source:
     path: v03-argocd-application/helm/nginx
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true

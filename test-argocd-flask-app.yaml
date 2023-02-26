@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flask-argocd-app
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/emiakia/flask-argocd.git'  # Replace with your repo URL
+    targetRevision: master                                 # Branch you want to use
+    path: .                                              # Path to the YAML file in the repo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default                                   # Namespace where your app will be deployed
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+

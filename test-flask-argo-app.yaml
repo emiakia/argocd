@@ -18,7 +18,7 @@ spec:
       - name: flask-app
         image: ghcr.io/emiakia/flask-argocd:v01 
         ports:
-        - containerPort: 5000                    # Flask app runs on port 5000
+        - containerPort: 80                    # Flask app runs on port 5000
 ---
 apiVersion: v1
 kind: Service

@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-argocd
+  labels:
+    app: flask-argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-argocd
+  template:
+    metadata:
+      labels:
+        app: flask-argocd
+    spec:
+      containers:
+      - name: flask-app
+        image: ghcr.io/emiakia/flask-argocd:v01 
+        ports:
+        - containerPort: 5000                    # Flask app runs on port 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flask-argocd-service
+spec:
+  selector:
+    app: flask-argocd
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000                          # Map external port 80 to container port 5000
+  type: NodePort
+

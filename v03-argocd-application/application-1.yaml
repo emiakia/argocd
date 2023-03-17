@@ -8,6 +8,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: "v03-argocd-application/helm/nginx"
+    path: v03-argocd-application/helm/nginx
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main

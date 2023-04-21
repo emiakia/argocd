@@ -10,7 +10,6 @@ spec:
   source:
     helm:
       releaseName: application-form-helm
-      parameters: 
       valueFiles:
         - customValues.yaml
     path: v03-argocd-application/helm/nginx

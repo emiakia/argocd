@@ -10,7 +10,7 @@ spec:
   source:
     directory:
       recurse: true    
-    path: directoryOfManifests
+    path: directoryOfManifests/sub-directory
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main
     

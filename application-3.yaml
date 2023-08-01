@@ -9,8 +9,8 @@ spec:
   project: default
   source:
     directory:
-      exclude: 'serviceaccount.yaml'    
-    path: directoryOfManifests/sub-directory
+      recurse: true    
+    path: directoryOfManifests
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main
     

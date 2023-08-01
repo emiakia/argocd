@@ -13,7 +13,7 @@ spec:
       parameters: 
       valueFiles:
         - customValues.yaml
-    path: helm/nginx
+    path: v03-argocd-application/helm/nginx
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main
     

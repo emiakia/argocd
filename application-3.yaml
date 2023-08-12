@@ -1,0 +1,16 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-directory
+spec:
+  destination:
+    namespace: directory
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      exclude: 'serviceaccount.yaml'
+    path: directoryOfMnifests
+    repoURL: https://github.com/emiakia/argocd.git
+    targetRevision: main
+    

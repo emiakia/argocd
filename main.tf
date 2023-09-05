@@ -8,9 +8,10 @@ terraform {
 }
 
 provider "argocd" {
-  server_addr = "https://192.168.174.192:32073"
+  server_addr = "192.168.174.192:32073"
   username    = "admin"
   password    = "ST43gN8qKIKsFEjI"
+  insecure    = true
 }
 
 resource "argocd_application" "helm" {
@@ -30,10 +31,10 @@ resource "argocd_application" "helm" {
 
     source {
       repo_url        = "https://github.com/emiakia/argocd.git"
-      chart           = "mychart"
+      path            = "helm/nginx"
       target_revision = "main"
       helm {
-        value_files = ["helm/nginx/customValues.yaml"]
+        value_files = ["customValues.yaml"]
       }
     }
   }

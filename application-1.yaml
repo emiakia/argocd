@@ -11,8 +11,8 @@ spec:
     helm:
       releaseName: application-form-helm
       parameters: 
-        - name: "replicaCount"
-          value: "3"
+      valueFiles:
+        - customValues.yaml
     path: nginx
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main

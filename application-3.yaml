@@ -8,8 +8,6 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    directory:
-      exclude: 'serviceaccount.yaml'
     path: directoryOfMnifests
     repoURL: https://github.com/emiakia/argocd.git
     targetRevision: main
